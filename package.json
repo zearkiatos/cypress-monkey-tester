@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/zearkiatos/cypress-monkey-tester/issues"
   },
-  "homepage": "https://github.com/zearkiatos/cypress-monkey-tester#readme"
+  "homepage": "https://github.com/zearkiatos/cypress-monkey-tester#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
 }
