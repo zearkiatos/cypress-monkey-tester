@@ -1,0 +1,31 @@
+{
+  "name": "cypress-monkey-tester",
+  "version": "1.0.0",
+  "description": "This is a project to understand a learn monkey testing 💻🐒 🤖 with Cypress to generate random test 🧪",
+  "main": "index.js",
+  "scripts": {
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/cypress-monkey-tester.git"
+  },
+  "keywords": [
+    "Test",
+    "Monkeys",
+    "learning",
+    "understand",
+    "practice",
+    "random",
+    "test"
+  ],
+  "author": "Pedro Capriles <caprilespe@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/cypress-monkey-tester/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/cypress-monkey-tester#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
