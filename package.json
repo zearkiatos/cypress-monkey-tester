@@ -4,7 +4,7 @@
   "description": "This is a project to understand a learn monkey testing 💻🐒 🤖 with Cypress to generate random test 🧪",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/zearkiatos/cypress-monkey-tester/issues"
   },
-  "homepage": "https://github.com/zearkiatos/cypress-monkey-tester#readme"
+  "homepage": "https://github.com/zearkiatos/cypress-monkey-tester#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
 }
