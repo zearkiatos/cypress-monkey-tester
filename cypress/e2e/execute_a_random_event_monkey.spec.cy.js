@@ -4,7 +4,7 @@ describe('Los estudiantes under monkeys random events', function() {
     it('visits los estudiantes and survives monkeys', function() {
         cy.visit('https://losestudiantes.co');
         cy.wait(1000);
-        executeRandomEvents(10);
+        executeRandomEvents(40);
     })
 })
 
@@ -18,7 +18,7 @@ function getRandomInt(min, max) {
 function executeRandomEvents (monkeyQuantities) {
  let monkeysLeft = monkeyQuantities;
  if(monkeyQuantities > 0) { 
-    let randomEvent = getRandomInt(0, 2);
+    let randomEvent = getRandomInt(0, 4);
     events[randomEvent]();
     monkeysLeft=-monkeysLeft;
     executeRandomEvents(monkeysLeft);
@@ -47,11 +47,20 @@ function randomFillATextInput() {
 }
 
 function randomDropdown() {
-    cy.get('select').then($selects => {
+    cy.get('.home-select__control').then($selects => {
         var randomSelect = $selects.get(getRandomInt(0, $selects.length));
         if(!Cypress.dom.isHidden(randomSelect)) {
-            const countOfLetter = getRandomInt(0, 20)
-            cy.wrap(randomText).type(faker.random.words(countOfLetter));
+            cy.wrap(randomLink).click({force: true});
+        }
+        cy.wait(1000);
+    });
+}
+
+function randomClickButton() {
+    cy.get('button').then($buttons => {
+        var randomButton = $buttons.get(getRandomInt(0, $buttons.length));
+        if(!Cypress.dom.isHidden(randomButton)) {
+            cy.wrap(randomButton).click({force: true});
         }
         cy.wait(1000);
     });
@@ -59,5 +68,7 @@ function randomDropdown() {
 
 const events = {
     0: () => randomClickOnLink(),
-    1: () => randomFillATextInput()
+    1: () => randomFillATextInput(),
+    2: () => randomDropdown(),
+    3: () => randomClickButton()
 }
